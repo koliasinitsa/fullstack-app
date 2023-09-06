@@ -1,14 +1,15 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsersModule } from './users/users.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({isGlobal: true, envFilePath: '../.env'}),
-	GraphQLModule.forRoot({
+	GraphQLModule.forRoot<ApolloDriverConfig>({
+		driver: ApolloDriver,
 		autoSchemaFile: 'schema.gql',
 		sortSchema: true,
 		playground: true
