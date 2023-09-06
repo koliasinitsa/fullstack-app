@@ -12,15 +12,15 @@ export class UserResolver {
 	) {
 	}
 
-    @Mutation(()=>UserEntity)
-    async createUser(@Args('createUser') createUserInput: CreateUserInput): Promise<UserEntity> {
-        return await this.userService.createUser(createUserInput)
-    }
+    @Mutation(() => UserEntity)
+	async createUser(@Args('createUser') createUserInput: CreateUserInput): Promise<UserEntity> {
+		return await this.userService.createUser(createUserInput)
+	}
 
-    @Mutation(()=>UserEntity)
-    async updateUser(@Args('updateUser') updateUserInput: UpdateUserInput): Promise<UserEntity> {
-        return await this.userService.createUser(updateUserInput)
-    }
+    @Mutation(() => UserEntity)
+	async updateUser(@Args('updateUser') updateUserInput: UpdateUserInput): Promise<UserEntity> {
+		return await this.userService.updateUser(updateUserInput)
+	}
 
     @Mutation(()=> Number)
     async removeUser(@Args('id') id: number): Promise<number> {

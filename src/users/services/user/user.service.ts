@@ -16,8 +16,8 @@ export class UserService {
     }
 
     async createUser(createUserInput: CreateUserInput): Promise<UserEntity> {
-        return await this.userRepository.save({...createUserInput})
-    }
+		return await this.userRepository.save({ ...createUserInput })
+	}
 
     async getOneUser(id: number): Promise<UserEntity> {
         return await this.userRepository.findOneBy({ id })
