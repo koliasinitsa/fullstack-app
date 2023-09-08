@@ -1,15 +1,13 @@
-import { Component, Input } from "@angular/core";
-
+import { Component, Input } from '@angular/core'
 
 @Component({
-    selector: 'app-icon',
-    template: `
-        <ng-template [ngIf]="icon">
-        <i class="{{ icon }}"></i>
-        </ng-template>
-    `,
+  selector: 'app-icon',
+  template: `
+    <ng-template [ngIf]="icon">
+      <i class="{{ icon }}"></i>
+    </ng-template>
+  `,
 })
 export class IconComponent {
-
-    @Input('icon') icon?: string
+  @Input('icon') icon?: string
 }

@@ -4,17 +4,18 @@ import { IUser } from 'src/app/interfaces';
 import { UsersService } from '../users.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss'],
+  styleUrls: [ './user.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserComponent implements OnInit {
   imgSrc: string = 'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg'
   user$?: Observable<{ user: IUser, loading: boolean }>
   isChange: boolean = false
-  
+
   constructor(
     private readonly usersService: UsersService,
     private readonly route: ActivatedRoute,

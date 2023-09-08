@@ -1,25 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe  } from '@angular/common';
 import { UsersComponent } from './users.component';
 import { IconModule } from 'src/app/components/icon/icon.module';
 import { RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { UserFormModule } from 'src/app/components/user-form/user-form.module';
+
 
 
 
 @NgModule({
-  declarations: [UsersComponent],
+  declarations: [ UsersComponent, UserComponent ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {
         path: '', component: UsersComponent, children: [
-          {path: ':id', component: UserComponent}
-        ]
+          { path: ':id', component: UserComponent },
+        ],
       },
     ]),
     IconModule,
-    //UsersModule,
+    UserFormModule,
   ],
 })
-export class UsersModule { }
+export class UsersModule {
+}
