@@ -23,4 +23,17 @@ export class UsersComponent implements OnInit {
     this.users$ = this.usersService.getAllUsers()
   }
 
+  isNewTrigger(): void {
+    this.isNew = !this.isNew
+  }
+
+  onSubmit(user: IUser) {
+    const { email, name } = user
+    this.usersService.createUser(name, email).subscribe(user => {
+      if (user) {
+        this.isNewTrigger()
+        this.router.navigate(['/users', user.id])
+      }
+    })
+  }
 }
