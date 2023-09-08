@@ -17,6 +17,7 @@ import { UsersModule } from './users/users.module';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
+	  // @ts-ignore
       useFactory: async (config: ConfigService) => ({
 				type: 'postgres',
 				host: config.get<string>('TYPEORM_HOST'),
