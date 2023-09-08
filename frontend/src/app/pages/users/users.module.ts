@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users.component';
 import { IconModule } from 'src/app/components/icon/icon.module';
 import { RouterModule } from '@angular/router';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -12,7 +13,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule.forChild([
       {
-        path: '', component: UsersComponent,
+        path: '', component: UsersComponent, children: [
+          {path: ':id', component: UserComponent}
+        ]
       },
     ]),
     IconModule,

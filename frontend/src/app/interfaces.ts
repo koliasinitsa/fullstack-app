@@ -6,3 +6,10 @@ export interface IMenu {
     href: string
     icon?: string
 }
+export interface IUser {
+    id: number
+    name: string
+    email: string
+    createdAt: Date
+    updatedAt: Date
+}
